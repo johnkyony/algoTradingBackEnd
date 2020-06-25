@@ -185,7 +185,12 @@ const Orders = {
     orderCancel: async function (accountID , orderSpecifier){
         // Cancel a pending Order in an Account 
         try {
+            console.log("==============")
+            console.log("canceling order: \t" + orderSpecifier)
+            console.log("==============")
             let orderCancel = await axios.put(apiUrl + `accounts/${accountID}/orders/${orderSpecifier}/cancel`)
+            console.log(orderCancel.data)
+            console.log("==============")
             return orderCancel.data
         } catch (error) {
             console.log(error.error)
@@ -231,7 +236,10 @@ const Trades = {
         try {
             console.log("==========")
             console.log("Closing Trade with id: \t" + tradeSpecifier)
+            console.log("===========")
             let closeTrade = await axios.put(apiUrl + `accounts/${accountID}/trades/${tradeSpecifier}/close`)
+            console.log(closeTrade.data.orderFillTransaction)
+            console.log("==============")
             return closeTrade.data
         } catch (error) {
             console.log(error.error)

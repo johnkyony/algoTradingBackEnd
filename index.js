@@ -155,7 +155,7 @@ app.get('/orders/:accountID/orderDetail/:orderSpecifier' , async (req , res) => 
 
 })
 
-app.get('/orders/:accountID/orderCancel/:orderSpecifier' , async (req , res) => {
+app.post('/orders/:accountID/orderCancel/:orderSpecifier' , async (req , res) => {
     try {
         let orderCancel = await oanda.Orders.orderCancel(req.params.accountID , req.params.orderSpecifier)
         res.send(orderCancel)

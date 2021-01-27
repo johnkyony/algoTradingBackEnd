@@ -120,7 +120,7 @@ const Instruments = {
 }
 
 const Orders = {
-    createNewOrder: async function (accountID , units , instrument , timeInforce , type , positionFill , price) {
+    createNewOrder: async function (accountID , units , instrument , timeInforce , type , positionFill , price , clientExtensions) {
         // Create an Order for an Account 
         try {
             
@@ -134,7 +134,8 @@ const Orders = {
                     "timeInForce": timeInforce, 
                     "type": type , 
                     "positionFill": positionFill,
-                    "price": price
+                    "price": price,
+                    "clientExtensions": clientExtensions
                 }
                
             })

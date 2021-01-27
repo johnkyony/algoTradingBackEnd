@@ -111,8 +111,9 @@ app.post('/orders/:accountID/createNewOrder' , async (req , res) => {
         let positionFill = req.body.positionFill
         let accountID = req.params.accountID
         let price = req.body.price
+        let clientExtensions = req.body.clientExtensions
         
-        let createNewOrder = await oanda.Orders.createNewOrder(accountID , units , instrument , timeInForce , type , positionFill , price)
+        let createNewOrder = await oanda.Orders.createNewOrder(accountID , units , instrument , timeInForce , type , positionFill , price ,clientExtensions)
 
         res.send(createNewOrder)
 

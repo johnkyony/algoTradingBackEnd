@@ -145,7 +145,7 @@ const Orders = {
             return newOrder.data
             
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
        
@@ -156,7 +156,7 @@ const Orders = {
             let allOrders = await axios.get(apiUrl + `accounts/${accountID}/orders`)
             return allOrders.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
         
@@ -169,7 +169,7 @@ const Orders = {
             return allPendingOrders.data
 
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -179,7 +179,7 @@ const Orders = {
             let orderDetail = await axios.get(apiUrl + `accounts/${accountID}/orders/${orderSpecifier}`)
             return orderDetail.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -194,7 +194,7 @@ const Orders = {
             console.log("==============")
             return orderCancel.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     }
@@ -208,7 +208,7 @@ const Trades = {
             return allTrades.data
 
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -218,7 +218,7 @@ const Trades = {
             let allOpenTrades = await axios.get(apiUrl + `accounts/${accountID}/openTrades`)
             return allOpenTrades.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -228,7 +228,7 @@ const Trades = {
             let tradeDetails = await axios.get(apiUrl + `accounts/${accountID}/trades/${tradeSpecifier}`)
             return tradeDetails.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -243,7 +243,7 @@ const Trades = {
             console.log("==============")
             return closeTrade.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -264,7 +264,7 @@ const Trades = {
             })
             return trailingStopOnTrades.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
         
@@ -280,7 +280,7 @@ const Positions = {
             let allPositions = await axios.get(apiUrl + `accounts/${accountID}/positions`)
             return allPositions.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -291,7 +291,7 @@ const Positions = {
             let allOpenPositions = await axios.get(apiUrl + `accounts/${accountID}/openPositions`)
             return allOpenPositions.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
        
     } , 
@@ -302,7 +302,7 @@ const Positions = {
             let singlePositionDetails = await axios.get(apiUrl + `accounts/${accountID}/positions/${instrument}`)
             return singlePositionDetails.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -314,7 +314,7 @@ const Positions = {
             })
             return closeSinglePosition.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
         
@@ -328,7 +328,7 @@ const Transactions = {
             let allTransactions = await axios.get(apiUrl + `accounts/${accountID}/transactions`)
             return allTransactions
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -338,7 +338,7 @@ const Transactions = {
             let singleAccountTransactionDetails = await axios.get(apiUrl + `accounts/${accountID}/transactions/${transactionID}`)
             return singleAccountTransactionDetails.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -348,7 +348,7 @@ const Transactions = {
             let searchTransactionsByIDRange = await axios.get(apiUrl + `accounts/${accountID}/transactions/idrange?to=${idRangeTo}&from=${idRangeFrom}`)
             return searchTransactionsByIDRange.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -358,7 +358,7 @@ const Transactions = {
             let searchTransactionStartingFromSpecificID = await axios.get(apiUrl + `accounts/${accountID}/transactions/${transactionID}`)
             return searchTransactionStartingFromSpecificID.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -375,7 +375,7 @@ const Transactions = {
             })
             return streamLatestTransactions.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
         
@@ -392,7 +392,7 @@ const Pricings = {
             let latestCandlesResult = await axios.get(apiUrl + `accounts/${accountID}/candles/latest`)
             return latestCandlesResult.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     }, 
@@ -402,7 +402,7 @@ const Pricings = {
             let specificPricingDetails = await axios.get(apiUrl + `accounts/${accountID}/pricing`)
             return specificPricingDetails.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     } , 
@@ -421,7 +421,7 @@ const Pricings = {
             })
             return pricingStream.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
         
@@ -432,7 +432,7 @@ const Pricings = {
             let fetchInstrumentCandleResults = await axios.get(apiUrl + `accounts/${accountID}/instruments/${instrument}/candles`)
             return fetchInstrumentCandleResults.data
         } catch (error) {
-            console.log(error.error)
+            console.log(error.message)
         }
         
     }

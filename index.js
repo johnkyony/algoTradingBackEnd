@@ -96,7 +96,7 @@ app.get('/instruments/:instrument/instrumentPositionBook' , async (req , res) =>
         let instrumentPositionBook = await oanda.Instruments.instrumentPositionBook(req.params.instrument)
         res.send(instrumentPositionBook)
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
 
 })
@@ -118,7 +118,7 @@ app.post('/orders/:accountID/createNewOrder' , async (req , res) => {
         res.send(createNewOrder)
 
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
     
@@ -129,7 +129,7 @@ app.get('/orders/:accountID/allAccountOrders' , async (req , res) => {
         let allAccountOrders = await oanda.Orders.allAccountOrders(req.params.accountID)
         res.send(allAccountOrders)
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
         
     }
     
@@ -140,7 +140,7 @@ app.get('/orders/:accountID/allPendingOrders' , async (req , res) => {
         let allPendingOrders = await oanda.Orders.allPendingOrders(req.params.accountID)
         res.send(allPendingOrders)
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -151,7 +151,7 @@ app.get('/orders/:accountID/orderDetail/:orderSpecifier' , async (req , res) => 
         let orderDetail = await oanda.Orders.orderDetail(req.params.accountID , req.params.orderSpecifier)
         res.send(orderDetail)
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
 
 })
@@ -161,7 +161,7 @@ app.post('/orders/:accountID/orderCancel/:orderSpecifier' , async (req , res) =>
         let orderCancel = await oanda.Orders.orderCancel(req.params.accountID , req.params.orderSpecifier)
         res.send(orderCancel)
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -174,7 +174,7 @@ app.get('/trades/:accountID/allTrades' , async (req , res) => {
         let allTrades = oanda.Trades.allTrades(req.params.accountID)
         res.send(allTrades)
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -185,7 +185,7 @@ app.get('/trades/:accountID/allOpenTrades' , async (req , res) => {
         res.send(allOpenTrades)
             
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
    
 })
@@ -195,7 +195,7 @@ app.get('/trades/:accountID/tradeDetails/:tradeSpecifier' , async (req , res) =>
         let tradeDetails = await oanda.Trades.tradeDetails(req.params.accountID , req.params.tradeSpecifier)
         res.send(tradeDetails)
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -205,7 +205,7 @@ app.post('/trades/:accountID/closeTrade/:tradeSpecifier' , async (req , res) => 
         let closeTrade = await oanda.Trades.closeTrade(req.params.accountID , req.params.tradeSpecifier)
         res.send(closeTrade)
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
     
@@ -222,7 +222,7 @@ app.post('/trades/:accountID/trailingStopOnTrades/:tradeSpecifier' , async (req 
         res.send(trailingStopOnTrades)
             
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 
@@ -236,7 +236,7 @@ app.get('/positions/:accountID/allPositions' , async (req , res) => {
         res.send(allPositions)
             
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -247,7 +247,7 @@ app.get('/positions/:accountID/allOpenPositions' ,async (req , res) => {
         res.send(allOpenPositions)
              
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -258,7 +258,7 @@ app.get('/positions/:accountID/singlePositionDetails/:instrument' ,async (req , 
         res.send(singlePositionDetails)
             
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -270,7 +270,7 @@ app.post('/positions/:accountID/closeSinglePosition/:instrument', async (req , r
         res.send(closeSinglePosition)
              
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 
@@ -284,7 +284,7 @@ app.get('/transactions/:accountID/allTransactions' , async (req , res) => {
         res.send(allTransactions)
              
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -295,7 +295,7 @@ app.get('/transactions/:accountID/singleAccountTransactionDetails/:transactionID
         res.send(singleAccountTransactionDetails)
             
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -309,7 +309,7 @@ app.post('/transactions/:accountID/searchTransactionsByIDRange', async (req ,res
         res.send(searchTransactionsByIDRange)
             
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
 
 
@@ -322,7 +322,7 @@ app.get('/transactions/:accountID/searchTransactionStartingFromSpecificID/:trans
         res.send(searchTransactionStartingFromSpecificID)
              
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -333,7 +333,7 @@ app.get('/transactions/:accountID/streamLatestTransactions' ,async (req , res) =
         res.send(streamLatestTransactions)
             
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -345,7 +345,7 @@ app.get('/pricings/:accountID/latestCandlesResult' , async (req , res) => {
         res.send(latestCandlesResult)
             
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
    
 })
@@ -356,7 +356,7 @@ app.get('/pricings/:accountID/specificPricingDetails' , async (req , res) => {
         res.send(specificPricingDetails)
             
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -366,7 +366,7 @@ app.get('/pricings/:accountID/pricingStream' , async (req , res) => {
         let pricingStream = await oanda.Pricings.pricingStream(req.params.accountID)
         res.send(pricingStream)    
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
@@ -377,7 +377,7 @@ app.get('/pricings/:accountID/fetchInstrumentCandleResults/:instrument' , async 
         res.send(fetchInstrumentCandleResults)
             
     } catch (error) {
-        console.log(error.error)
+        console.log(error.message)
     }
     
 })
